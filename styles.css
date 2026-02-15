@@ -126,13 +126,13 @@ header {
   background-color: #fff;
   color: #111;
   transition: background-color 0.2s ease, color 0.2s ease;
-  border-color: #70dd30;
+  border-color: #ddd;
 }
 
 .navigation .add-entry:hover {
-  background-color: #70dd30;
-  color: #fff;
+  background-color: #ddd;
 }
+
 
 
 /* НАВИГАЦИЯ ВЕРТИКАЛЬНАЯ */
@@ -351,5 +351,6 @@ section p {
   border-radius:6px; 
   cursor:pointer; 
 }
+
 
 
