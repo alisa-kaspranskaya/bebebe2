@@ -1,0 +1,355 @@
+* { 
+  box-sizing: border-box; 
+}
+
+html { 
+  scroll-behavior: initial;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f6f6f6;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* ПАРОЛЬ ПАРОЛЬ ПАРОЛЬ ПАРОЛЬ ПАРОЛЬ */
+
+.login-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.login-box {
+  background: #fff;
+  padding: 40px;
+  width: 320px;
+  text-align: center;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius:6px;
+  border: 1px solid #111;
+}
+
+.login-box button {
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  border-radius:6px;
+  border: 1px solid #111;
+  color: #111;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+}
+
+.login-box button:hover {
+  background: #ff6b00;
+  border: 1px solid #ff6b00;
+  color: #fff;
+}
+
+.error-msg {
+  color: #ff6b00;
+  font-size: 14px;
+  height: 18px;
+}
+
+/* НАВИГАцИЯ ГОРИЗОНТАЛЬНАЯ */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background: #f6f6f6;
+  padding: 0 20px;
+}
+
+.navigation {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  box-sizing: border-box;
+  padding: 0 8px;
+}
+
+.navigation a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-color: #fff;
+  color: #111;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-color: #ff6b00;
+}
+
+.navigation a:hover {
+  background-color: #ff6b00;
+  color: #fff;
+}
+
+.navigation .add-entry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-color: #fff;
+  color: #111;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-color: #70dd30;
+}
+
+.navigation .add-entry:hover {
+  background-color: #70dd30;
+  color: #fff;
+}
+
+
+/* НАВИГАЦИЯ ВЕРТИКАЛЬНАЯ */
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 320px;
+  background-color: #111;
+  color: #ddd;
+  transform: translateX(100%);
+  transition: transform 0.2s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 60px;
+}
+
+.sidenav.open {
+  transform: translateX(0);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  background: transparent;
+  color: #ddd;
+  border: none;
+  cursor: pointer;
+}
+
+.side-links { 
+  padding: 12px 18px 40px; 
+  display:flex; 
+  flex-direction:column; 
+  gap:8px; 
+}
+
+.side-links a {
+  color: #ddd; 
+  text-decoration:none; 
+  padding:10px; 
+  border-radius:6px; 
+  display:block;
+}
+
+.side-links a:hover { 
+  background: #f6f6f617; 
+  color:#fff; 
+}
+
+body.sidenav-open { overflow: hidden; }
+
+.menu-toggle{
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 400;
+  font-size: 20px;
+  padding: 8px 10px;
+  cursor: pointer;
+  border: none;
+}
+
+/* ОСНОВА ОСНОВА ОСНОВА ОСНОВА ОСНОВА */
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 160px 18px 80px;
+}
+
+section {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 40px;
+  margin-bottom: 32px;
+  margin-top: 80px;
+  scroll-margin-top: 240px;
+}
+
+.page-title {
+  font-size: 28px;
+  margin: 0 0 20px 0;
+  padding-bottom: 6px;
+  position: relative;
+}
+
+.page-title::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 4px;
+  background: #ff6b00;
+  margin-top: 8px;
+}
+
+section p {
+  white-space: pre-line;
+  margin-left: 32px;
+}
+
+/* ОГРОМНАЯ ЗЕЛЕНАЯ КНОПКА ДОБАВИТЬ */
+
+.container#addPanel {
+  display: none;
+  position: absolute;
+  right: 16px;
+  top: 64px;
+  z-index: 1001;
+  width: 600px;
+  height: 800px;
+  border-radius: 10px;
+  border: 2px solid #ff6b00;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: hidden;
+}
+
+.hero-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.add-form input#newTitle {
+  width: 100%;
+  height: 44px;
+  padding: 8px 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+#newText[contenteditable="true"] {
+  flex: 1 1 auto;
+  min-height: 120px;
+  border: 2px solid #eee;
+  padding: 10px;
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+  overflow: auto;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#newText[contenteditable]:empty:before {
+  content: attr(data-placeholder);
+  color: #9aa0a6;
+}
+
+.toolbar { 
+  display: flex; 
+  gap: 6px; 
+  margin: 0; 
+}
+
+.toolbar button {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  background:#fafafa;
+  cursor:pointer;
+}
+
+.form-actions {
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+  margin-top: 6px;
+}
+
+.btn-primary { 
+  font-weight: bold;
+  background:#ff6b00; 
+  color:#fff; 
+  border:none; 
+  padding:8px 12px; 
+  border-radius:6px; 
+  cursor:pointer; 
+}
+
+.btn-ghost { 
+  font-weight: bold;
+  background:transparent; 
+  border:2px solid #ddd; 
+  padding:8px 12px; 
+  border-radius:6px; 
+  cursor:pointer; 
+}
+
+
